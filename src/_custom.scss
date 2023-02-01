@@ -1,0 +1,186 @@
+@import '_colors.scss';
+
+$primary: $c-gov-blue;
+//$link-decoration: none;
+//$link-hover-decoration: underline;
+@import '~bootstrap/scss/bootstrap';
+
+@import 'assets/css/_config.scss';
+@import 'assets/css/styles';
+@import 'assets/css/print';
+@import 'assets/css/user_styles';
+
+.app-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+
+  .app-content {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+hr {
+  background: none;
+  opacity: 0.5;
+}
+
+.gov-header__separator {
+  left: 0;
+  right: 0;
+  width: auto;
+}
+
+.gov-portal-nav:before {
+  display: none;
+}
+
+//a, button {
+//  &:focus {
+//    //border-color: transparent !important;
+//    outline: 0 !important;
+//    box-shadow: none !important;
+//  }
+//}
+
+.gov-sortable-table__trigger {
+  &:after {
+    opacity: 0.4;
+  }
+
+  &--desc,
+  &--asc {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.gov-breadcrumbs__item .gov-link:visited {
+  color: var(--gov-color-blue);
+}
+
+.gov-table-cover {
+  overflow-x: auto;
+}
+
+.btn-link {
+  text-transform: none;
+}
+
+.gov-portal-subnav--mini {
+  min-height: auto;
+  left: auto;
+  right: 0;
+  transform: none;
+  bottom: auto;
+  padding: 1rem 2rem;
+  margin-top: 10px;
+
+  &:after {
+    display: none;
+  }
+
+  .gov-portal-subnav__submenu {
+    margin: 0;
+    padding: 0;
+
+    &:after {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.no-after {
+  &:after {
+    display: none;
+  }
+}
+
+fieldset {
+  margin-bottom: 30px;
+
+  legend {
+    font-size: 16px;
+  }
+}
+
+a.gov-logo[target='_blank'] {
+  &:after {
+    content: none;
+  }
+}
+
+@media (min-width: 42em) {
+  .gov-portal-nav__menu {
+    justify-content: flex-start;
+
+    .gov-portal-nav__item {
+      margin-right: 20px;
+
+      &.has-subnav {
+        position: relative;
+      }
+    }
+  }
+}
+
+.react-datepicker-popper {
+  z-index: 10 !important;
+}
+
+.gov-form-control.not-empty {
+  select[aria-disabled='true'] ~ .gov-form-control__label,
+  select:disabled ~ .gov-form-control__label {
+    padding-top: 0.4375rem;
+    font-size: 0.75rem;
+    color: var(--gov-color-grey-dark);
+  }
+}
+
+.button-delete {
+  color: $c-gov-error;
+}
+
+.gov-table__body {
+  .date-col {
+    min-width: 150px;
+  }
+}
+
+.gov-table-cover {
+  margin-bottom: 1.5625rem;
+
+  table,
+  .gov-table {
+    margin-bottom: 0;
+  }
+}
+
+.gov-container__content {
+  max-width: 1300px;
+}
+
+a:focus,
+.gov-link:focus,
+.gov-fileinput__attachments > li > span:focus,
+.gov-portal-nav__link:focus,
+.gov-sortable-table__trigger:focus,
+button:focus,
+.gov-button:focus,
+.gov-hamburger:focus,
+.gov-calendar__days tbody tr td button:focus,
+.gov-calendar__toggle:focus {
+  box-shadow: none !important;
+  outline: 0;
+}
