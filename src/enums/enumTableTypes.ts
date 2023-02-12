@@ -5,4 +5,5 @@ export const TABLE_TYPES = {
   users: 'users',
   dso: 'dso',
   contractHistory: 'contractHistory',
+  logs: 'logs',
 }
