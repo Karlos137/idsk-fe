@@ -37,6 +37,7 @@ import Layout from './Layout'
 import { LINKS } from './LINKS'
 import PermissionRoute from './PermissionRoute'
 import ProtectedRoute from './ProtectedRoute'
+import TestApi from '../../pages/TestApi/TestApi'
 
 // const RedirectTo404 = () => {
 //   window.location.href = '/404-not-found?source=' + window.location.pathname
@@ -65,6 +66,9 @@ function App() {
           <Route path={LINKS.resetHesla} element={<UzivatelResetHeslaPage />} />
           <Route path={LINKS.aktivaceUzivatele} element={<UzivatelAktivacePage />} />
           <Route path={LINKS.zapomenuteHeslo} element={<UzivatelZapomenuteHesloPage />} />
+          
+          {/* Test route to test IDSK API functionality */}
+          <Route path={LINKS.home + 'test-api'} element={<TestApi />} />
 
           <Route
             path={LINKS.home}
