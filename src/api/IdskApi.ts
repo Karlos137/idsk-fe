@@ -13,6 +13,15 @@ class IdskApi {
     getApiKeys() {
         return this.api.get('/api_keys?page=1&limit=100').then((response) => response.data);
     }
+
+    getApplicationLogs(page: number, limit: number) {
+        return this.api.get(`/application_logs?page=${page}&limit=${limit}`).then((res) => ({
+          data: res.data,
+          totalCount: parseInt(res.headers['x-total-count']),
+        }))
+    }
+
+    
 }
 
 export default new IdskApi();

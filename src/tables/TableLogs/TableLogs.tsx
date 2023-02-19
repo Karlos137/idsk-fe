@@ -5,10 +5,8 @@ import Error from '../../components/Error/Error'
 import Loading from '../../components/Loading/Loading'
 import NoData from '../../components/NoData/NoData'
 import PaginatorPerPage from '../../components/PaginatorPerPage/PaginatorPerPage'
-import { IDSK_ROLES_LABEL } from '../../enums/enumUserRolesTypes'
-import { USER_STATES_LABEL } from '../../enums/enumUserStates'
 import { useContextMenuApp } from '../../hooks/useContextMenuApp'
-import { useFetchUsers } from '../../hooks/useFetchUsers'
+import { useFetchLogs } from '../../hooks/useFetchLogs'
 import { useUserAuth } from '../../hooks/useUserAuth'
 import SortTableHeader from '../sort/SortTableHeader'
 
@@ -51,22 +49,19 @@ const TableLogs = () => {
             </tr>
           </thead>
           <tbody className='gov-table__body'>
-            {data?.map((user, index) => (
-              <tr key={index} onContextMenu={showContextMenu({ id: user.id })}>
+            {data?.map((log, index) => (
+              <tr key={index} onContextMenu={showContextMenu({ id: log.id })}>
                 <td>
-                  <Link to={user.id}>{user.username}</Link>
+                  <Link to={log.id}>{log.username}</Link>
                 </td>
                 <td className='gov-table__cell--wide'>
                   {isReferent ? (
-                    <Link to={LINKS.subjekty + '/' + user.organization?.id}>{user.organization?.name}</Link>
+                    <Link to={LINKS.subjekty + '/' + log.organization?.id}>{log.organization?.name}</Link>
                   ) : (
-                    user.organization?.name
+                    log.organization?.name
                   )}
                 </td>
-                <td>{user.firstName}</td>
-                <td>{user.lastName}</td>
-                <td>{USER_STATES_LABEL[user.accountStatus]}</td>
-                <td>{user.dynamicRoles.map((role) => IDSK_ROLES_LABEL[role] || '').join(', ')}</td>
+                <td>{log.status}</td>
               </tr>
             ))}
           </tbody>
