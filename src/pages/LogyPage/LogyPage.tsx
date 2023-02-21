@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import PageWrap from '../../components/PageWrap/PageWrap'
-import TableLogsLogins from '../../tables/TableLogs/TableLogsLogins'
+import TableLogsSuccessLogins from '../../tables/TableLogs/TableLogsSuccessLogins'
 
 const LogyPage = () => {
   const [tabSelected, setTabSelected] = useState('login')
@@ -52,7 +52,7 @@ const LogyPage = () => {
             </button>
           </div>
         </div>
-        <TableLogsLogins />
+        <TableLogsSuccessLogins />
       </PageWrap>
     </>
   )

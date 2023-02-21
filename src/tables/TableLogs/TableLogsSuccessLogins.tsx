@@ -13,7 +13,7 @@ const getKey = (pageIndex: any, previousPageData: any) => {
   }&limit=20&type=SECURITY&logData.securityType=LOGIN&logData.securityResult=SUCCESS&order%5BcreatedAt%5D=desc` // SWR key
 }
 
-const TableLogsLogins = () => {
+const TableLogsSuccessLogins = () => {
   const { data, error, isLoading, size, setSize } = useSWRInfinite(getKey, fetcher, {
     initialSize: 1,
     onSuccess: (data) => console.log('DATA', data),
@@ -63,5 +63,5 @@ const TableLogsLogins = () => {
   )
 }
 
-export default TableLogsLogins
+export default TableLogsSuccessLogins
 
