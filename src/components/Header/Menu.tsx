@@ -67,7 +67,7 @@ const Menu = () => {
           hide={!isOrgAdmin && !isReferent}
           subnav={[
             { link: LINKS.uzivatele, label: 'Uživatelé' },
-            // { link: LINKS.spravaLogy, label: 'Logy', hide: !isReferent },
+            { link: LINKS.spravaLogy, label: 'Logy', hide: !isReferent },
           ]}
         />
       </ul>
