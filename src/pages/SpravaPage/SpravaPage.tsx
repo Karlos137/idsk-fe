@@ -10,6 +10,9 @@ const SpravaPage = () => {
         <ButtonGovLink variant='primary' to={LINKS.uzivatele} className='me-4'>
           Správa uživatelů
         </ButtonGovLink>
+        <ButtonGovLink variant='primary' to={LINKS.spravaLogy} className='me-4'>
+          Logy
+        </ButtonGovLink>
         {/*todo jen pro referenta*/}
         {/*        <ButtonGovLink variant='primary' to={LINKS.spravaLogy}>*/}
         {/*          Správa logů*/}
