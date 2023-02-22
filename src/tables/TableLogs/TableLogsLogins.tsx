@@ -27,9 +27,7 @@ const TableLogsLogins = ({ result }: { result: 'SUCCESS' | 'FAILURE' }) => {
   })
 
   useEffect(() => {
-    console.log('DATA', data && data.length > 0 && data[data.length - 1].length === 0)
     if (data && data.length > 0 && data[data.length - 1].length === 0) {
-      console.log('DATA LENGTH', data[data.length - 1])
       setMoreData(false)
     }
   }, [data])
